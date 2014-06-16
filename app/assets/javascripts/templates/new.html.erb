@@ -1,0 +1,86 @@
+
+<div ng-controller="HomeControllers">
+  <input type="button" value="Add a new client" ng-click="newClient();"></input><br/><br/>
+  <div ng-hide="is_visible">
+    <div>
+      <div style="float:left">First name<br/> 
+        <input type="text" ng-model="client.first_name"></input>
+      </div>
+      <div style="float:left">Middle name<br/> 
+        <input type="text" ng-model="client.middle_name"></input>
+      </div>
+      <div style="float:left">Last name<br/> 
+        <input type="text" ng-model="client.last_name"></input>
+      </div><br/>
+    </div><br/><br>
+    <div>
+      <div style="float:left">Date of birth
+        <input type="text" ng-model="client.dob"></input>
+      </div>
+      <div style="float:left" >SSN (not required)
+        <input type="text" ng-model="client.ssn"></input>
+      </div>
+    </div><br/><br/>
+    <div>
+      <div style="float:left">Place
+        <select name="test" ng-model="client.place">
+          <option value="">Please select location</option>
+          <option value="test">test</option>
+        </select>
+      </div>
+      <div style="float:left" >Ethnicity
+        <select name="test" ng-model="client.ethnicity">
+          <option value="">Please select Ethnicity</option>
+          <option value="test">test</option>
+        </select>
+      </div>
+    </div><br/><br/>
+    <div>
+      <div style="float:left">Maritial Status
+        <select name="test" ng-model="client.miratial_status">
+          <option value="">Please select</option>
+          <option value="test">Married</option>
+          <option value="test">Un-Married</option>
+        </select>
+      </div>
+      <div style="float:left" >Elderly<br>
+        <input type="radio" name="Elderly" value="No" ng-model="client.elderly" /> No<br />
+        <input type="radio" name="Elderly" value="Yes" ng-model="client.elderly" />Yes<br />
+      </div>
+      <div style="float:left" >Disabled<br>
+        <input type="radio" name="Disabled" value="No" ng-model="client.disabled" /> No<br />
+        <input type="radio" name="Disabled" value="Yes" ng-model="client.disabled" />Yes<br />
+      </div>
+    </div><br/><br/><br/><br/><br/>
+    <div>
+      <div style="float:left">Occupation
+        <input type="text" ng-model="client.occupation" ></input>
+      </div>
+      <div style="float:left" >Part time student<br>
+        <input type="radio" name="part_time_student" value="No" ng-model="client.part_time_student" /> No<br />
+        <input type="radio" name="part_time_student" value="Yes" ng-model="client.part_time_student" />Yes<br />
+      </div>
+      <div style="float:left" >Full time student<br>
+        <input type="radio" name="full_time_student" value="No" ng-model="client.full_time_student" /> No<br />
+        <input type="radio" name="full_time_student" value="Yes" ng-model="client.full_time_student" />Yes<br />
+      </div>
+    </div><br/><br><br>
+    <input type="button" value="Submit" ng-click="submit();"></input>
+    <input type="button" value="Back" ng-click="back();"></input><br/><br/>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div ng-init="getClient()">
+    <table>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>DOB</th>
+      <tr ng-repeat="client in allClients">
+        <td>{{client.first_name}}</td>
+        <td>{{client.last_name}}</td>
+        <td>{{client.dob}}</td>
+      </tr>
+    </table>
+  </div>
+</div>  
